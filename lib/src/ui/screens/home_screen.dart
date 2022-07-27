@@ -14,7 +14,8 @@ class Home extends StatelessWidget {
             body: Column(
             children:  [
           SizedBox(height: deviceType.getCorePadding()),
-          const Center(child: Text('Home')),
+           Center(child: Text('Home ${deviceType.name}')),
+              Center(child: Text(deviceType.name)),
               SizedBox(height: deviceType.getCorePadding()),
 
           const TestViewButtons(),

@@ -15,6 +15,7 @@ class ScreenTwo extends StatelessWidget {
         children:  [
         SizedBox(height: deviceType.getCorePadding()),
     const Center(child: Text('Screen Two')),
+          Center(child: Text(deviceType.name)),
     SizedBox(height: deviceType.getCorePadding()),
 
     const TestViewButtons(),

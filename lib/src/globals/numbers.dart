@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../globals.dart';
 
-const double tabletMinSize = 800;
+const double tabletMinSize = 1000;
 
 // global props
 late double deviceWidth;
