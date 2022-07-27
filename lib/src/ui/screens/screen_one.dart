@@ -14,7 +14,7 @@ class ScreenOne extends StatelessWidget {
       body: Column(
         children:  [
           SizedBox(height: deviceType.getCorePadding()),
-          const Center(child: Text('Home')),
+          const Center(child: Text('Screen One')),
           SizedBox(height: deviceType.getCorePadding()),
 
           const TestViewButtons(),

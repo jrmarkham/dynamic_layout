@@ -30,7 +30,7 @@ class CoreAppBar extends StatelessWidget {
         CoreButton(
 
           label: 'One',
-          color: BaseColor.blue,
+          color: BaseColor.green,
           size: ButtonSize.small,
           callback: () => _navCall(Nav.one),
 
@@ -38,7 +38,7 @@ class CoreAppBar extends StatelessWidget {
         CoreButton(
 
           label: 'Two',
-          color: BaseColor.green,
+          color: BaseColor.yellow,
           size: ButtonSize.small,
           callback: () => _navCall(Nav.two),
 
