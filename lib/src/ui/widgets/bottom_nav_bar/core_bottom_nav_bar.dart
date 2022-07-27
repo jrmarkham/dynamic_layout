@@ -1,26 +1,35 @@
 
 
+import 'package:dynamic_layout/src/data/blocs/nav_cubit/nav_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CoreBottomNavigationBar extends StatelessWidget {
   const CoreBottomNavigationBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(items: const [
+    final NavCubit navCubit = BlocProvider.of<NavCubit>(context);
+    return BottomNavigationBar(
+      onTap: (int idx)=>navCubit.setNav(Nav.values[idx]),
+        currentIndex: navCubit.state.index,
+
+
+        items: const [
     BottomNavigationBarItem(
-      icon: Icon(Icons.ac_unit),
-      label: 'Sample 0',
+      icon: Icon(Icons.home),
+      label: 'Home',
+
 
     ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.accessibility),
-        label: 'Sample 1',
+        icon: Icon(Icons.looks_one_sharp),
+        label: 'Screen One',
 
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.access_alarm),
-        label: 'Sample 2',
+        icon: Icon(Icons.looks_two_sharp),
+        label: 'Screen Two',
 
       )
 

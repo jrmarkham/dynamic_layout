@@ -38,8 +38,8 @@ class AppNavigator extends StatelessWidget {
                 const MaterialPage(child: ScreenOne()),
                 const MaterialPage(child: ScreenTwo()),
                 if(navState == Nav.home) const MaterialPage(child: Home()),
-                if(navState == Nav.altOne) const MaterialPage(child: ScreenOne()),
-                if(navState == Nav.altTwo) const MaterialPage(child: ScreenTwo()),
+                if(navState == Nav.one) const MaterialPage(child: ScreenOne()),
+                if(navState == Nav.two) const MaterialPage(child: ScreenTwo()),
               ],
               onPopPage: (route, result) {
                 return route.didPop(result);
