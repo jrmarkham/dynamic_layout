@@ -19,40 +19,35 @@ class CoreAppBar extends StatelessWidget {
       bloc: navCubit,
       builder: (BuildContext context, NavState state) {
         return AppBar(
-          title: const Text(''),
-           backgroundColor: state.navColor.getContrastColor(),
-           foregroundColor: state.navColor.getColor(),
+          title: Text(state.nav == Nav.home
+              ? 'Hello Dan'
+              : state.nav == Nav.one
+                  ? 'Hey Tonya'
+                  : 'Yo John'),
+          backgroundColor: state.navColor.getContrastColor(),
+          foregroundColor: state.navColor.getColor(),
           // shadowColor: state.navColor.getShadowColor(),
           actions: [
             CoreButton(
-
               label: 'Home',
               color: state.navColor,
               size: ButtonSize.small,
               callback: () => navCall(Nav.home),
-
             ),
             const SizedBox(width: 10.0),
             CoreButton(
-
               label: 'One',
               color: state.navColor,
               size: ButtonSize.small,
               callback: () => navCall(Nav.one),
-
             ),
-
             const SizedBox(width: 10.0),
             CoreButton(
-
               label: 'Two',
               color: state.navColor,
               size: ButtonSize.small,
               callback: () => navCall(Nav.two),
-
             ),
-
-
           ],
         );
       },

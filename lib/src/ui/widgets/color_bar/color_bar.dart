@@ -19,7 +19,7 @@ class ColorBar extends StatelessWidget {
       bloc: colorCubit,
         listener: (BuildContext context, BaseColor state) {
 
-        //  navColor(state);
+          navColor(state);
         },
       builder: (BuildContext context, BaseColor state) {
         return Column(
