@@ -37,7 +37,7 @@ enum BaseColor {
       case BaseColor.white:
         return colorWhite;
       case BaseColor.black:
-        return colorBack;
+        return colorBlack;
       case BaseColor.red:
         return colorRed;
       case BaseColor.maroon:
@@ -47,9 +47,9 @@ enum BaseColor {
       case BaseColor.yellowDark:
         return colorYellowDark;
       case BaseColor.blue:
-        return colorRed;
+        return colorBlue;
       case BaseColor.blueDark:
-        return colorRed;
+        return colorBlueDark;
       case BaseColor.green:
         return colorGreen;
       case BaseColor.greenDark:

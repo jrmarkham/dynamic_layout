@@ -12,7 +12,7 @@ class CoreBottomNavigationBar extends StatelessWidget {
     final NavCubit navCubit = BlocProvider.of<NavCubit>(context);
     return BottomNavigationBar(
       onTap: (int idx)=>navCubit.setNav(Nav.values[idx]),
-        currentIndex: navCubit.state.index,
+        currentIndex: navCubit.state.nav.index,
 
 
         items: const [

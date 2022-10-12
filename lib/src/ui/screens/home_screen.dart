@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 import '../widgets/buttons/core_buttons.dart';
+import '../widgets/color_bar/color_bar.dart';
 import 'scaffolds/core_scaffold.dart';
 
 class Home extends StatelessWidget {
@@ -18,7 +19,10 @@ class Home extends StatelessWidget {
               Center(child: Text(deviceType.name)),
               SizedBox(height: deviceType.getCorePadding()),
 
-          const TestViewButtons(),
+          const ColorBar(startColor: BaseColor.maroon),
+
+
+          // const TestViewButtons(),
               SizedBox(height: deviceType.getCorePadding()),
         ],
       ),

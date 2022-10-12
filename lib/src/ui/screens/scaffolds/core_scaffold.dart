@@ -22,13 +22,11 @@ class CoreScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: key ?? GlobalKey<ScaffoldState>(),
-      appBar: appBar != null || deviceType == DeviceType.web
-          ? PreferredSize(
+      appBar: PreferredSize(
               preferredSize: Size.fromHeight(deviceType.getMenuHeight()),
               child: SizedBox(
                   height: deviceType.getMenuHeight(),
-                  child: appBar ?? const CoreAppBar()))
-          : null,
+                  child: appBar ?? const CoreAppBar())),
       resizeToAvoidBottomInset: true,
       body: SafeArea(child: body),
       bottomNavigationBar: bottomNavBar != null || deviceType != DeviceType.web

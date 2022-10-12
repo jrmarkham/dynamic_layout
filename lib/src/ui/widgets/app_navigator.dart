@@ -19,8 +19,8 @@ class AppNavigator extends StatelessWidget {
     initializeDeviceDimensions(MediaQuery.of(context).size);
     return MultiBlocListener(
         listeners: [
-          BlocListener<NavCubit, Nav>(
-            listener: (BuildContext context, Nav navState) {
+          BlocListener<NavCubit, NavState>(
+            listener: (BuildContext context, NavState navState) {
               debugPrint('nav state $navState');
             }
           ),
@@ -30,16 +30,16 @@ class AppNavigator extends StatelessWidget {
               }
           )
         ],
-      child: BlocBuilder<NavCubit, Nav>(
-          builder: (BuildContext context, Nav navState) {
+      child: BlocBuilder<NavCubit, NavState>(
+          builder: (BuildContext context, NavState navState) {
             return Navigator(
               pages: [
                 const MaterialPage(child: Home()),
                 const MaterialPage(child: ScreenOne()),
                 const MaterialPage(child: ScreenTwo()),
-                if(navState == Nav.home) const MaterialPage(child: Home()),
-                if(navState == Nav.one) const MaterialPage(child: ScreenOne()),
-                if(navState == Nav.two) const MaterialPage(child: ScreenTwo()),
+                if(navState.nav == Nav.home) const MaterialPage(child: Home()),
+                if(navState.nav == Nav.one) const MaterialPage(child: ScreenOne()),
+                if(navState.nav == Nav.two) const MaterialPage(child: ScreenTwo()),
               ],
               onPopPage: (route, result) {
                 return route.didPop(result);

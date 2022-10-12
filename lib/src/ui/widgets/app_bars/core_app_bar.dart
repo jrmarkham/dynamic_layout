@@ -1,4 +1,3 @@
-
 // Default appbar for web
 
 import 'package:dynamic_layout/src/globals.dart';
@@ -13,39 +12,50 @@ class CoreAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    NavCubit navCubit = BlocProvider.of<NavCubit>(context);
+    void navCall(Nav nav) => navCubit.setNav(nav);
 
-    void _navCall (Nav nav)=> BlocProvider.of<NavCubit>(context).setNav(nav);
+    return BlocBuilder<NavCubit, NavState>(
+      bloc: navCubit,
+      builder: (BuildContext context, NavState state) {
+        return AppBar(
+          title: const Text(''),
+           backgroundColor: state.navColor.getContrastColor(),
+           foregroundColor: state.navColor.getColor(),
+          // shadowColor: state.navColor.getShadowColor(),
+          actions: [
+            CoreButton(
 
-    return AppBar(
-      title: const Text('App bar for web'),
-      actions: [
-        CoreButton(
+              label: 'Home',
+              color: state.navColor,
+              size: ButtonSize.small,
+              callback: () => navCall(Nav.home),
 
-          label: 'Home',
-          color: BaseColor.red,
-          size: ButtonSize.small,
-          callback: () => _navCall(Nav.home),
+            ),
+            const SizedBox(width: 10.0),
+            CoreButton(
 
-        ),
-        CoreButton(
+              label: 'One',
+              color: state.navColor,
+              size: ButtonSize.small,
+              callback: () => navCall(Nav.one),
 
-          label: 'One',
-          color: BaseColor.green,
-          size: ButtonSize.small,
-          callback: () => _navCall(Nav.one),
+            ),
 
-        ),
-        CoreButton(
+            const SizedBox(width: 10.0),
+            CoreButton(
 
-          label: 'Two',
-          color: BaseColor.yellow,
-          size: ButtonSize.small,
-          callback: () => _navCall(Nav.two),
+              label: 'Two',
+              color: state.navColor,
+              size: ButtonSize.small,
+              callback: () => navCall(Nav.two),
 
-        ),
+            ),
 
 
-      ],
+          ],
+        );
+      },
     );
   }
 }

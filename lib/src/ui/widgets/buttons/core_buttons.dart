@@ -19,7 +19,13 @@ class CoreButton extends StatelessWidget {
     return InkWell(
       onTap: callback ?? () => debugPrint('Core Button'),
       child: Container(
-        color: color.getColor(),
+
+
+        decoration: BoxDecoration(
+            border: Border.all(color: color.getContrastColor(), width: 2.0),
+            color: color.getColor()
+        ),
+        
         width: size.getWidth(),
         height: size.getHeight(),
         child: Center(
