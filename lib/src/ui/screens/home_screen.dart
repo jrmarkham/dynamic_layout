@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
           const ColorBar(startColor: BaseColor.maroon),
 
 
-          // const TestViewButtons(),
+           const TestViewButtons(),
               SizedBox(height: deviceType.getCorePadding()),
         ],
       ),

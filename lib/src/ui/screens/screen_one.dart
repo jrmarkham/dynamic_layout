@@ -21,7 +21,7 @@ class ScreenOne extends StatelessWidget {
 
           const ColorBar(startColor: BaseColor.greenDark),
           //
-          // const TestViewButtons(),
+           const TestViewButtons(),
           SizedBox(height: deviceType.getCorePadding()),
         ],
       ),

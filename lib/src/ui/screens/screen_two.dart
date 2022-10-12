@@ -18,7 +18,7 @@ class ScreenTwo extends StatelessWidget {
           Center(child: Text(deviceType.name)),
           SizedBox(height: deviceType.getCorePadding()),
           const ColorBar(startColor: BaseColor.yellow),
-          // const TestViewButtons(),
+           const TestViewButtons(),
           SizedBox(height: deviceType.getCorePadding()),
         ],
       ),

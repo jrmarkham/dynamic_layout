@@ -25,7 +25,7 @@ class CoreButton extends StatelessWidget {
             border: Border.all(color: color.getContrastColor(), width: 2.0),
             color: color.getColor()
         ),
-        
+
         width: size.getWidth(),
         height: size.getHeight(),
         child: Center(
@@ -56,23 +56,24 @@ class TestViewButtons extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
+          const SizedBox(height: 25.0,),
           const Text('Bool test button'),
           const BoolButton(),
           SizedBox(height: deviceType.getEdgePadding()),
-          const Text('Three mediums buttons'),
-          const CoreButton(
-            size: ButtonSize.medium,
-          ),
-          const CoreButton(
-            color: BaseColor.red,
-            label: 'Medium Long',
-            size: ButtonSize.mediumLong,
-          ),
-          const CoreButton(
-            label: 'Medium Short',
-            color: BaseColor.green,
-            size: ButtonSize.mediumShort,
-          ),
+          // const Text('Three mediums buttons'),
+          // const CoreButton(
+          //   size: ButtonSize.medium,
+          // ),
+          // const CoreButton(
+          //   color: BaseColor.red,
+          //   label: 'Medium Long',
+          //   size: ButtonSize.mediumLong,
+          // ),
+          // const CoreButton(
+          //   label: 'Medium Short',
+          //   color: BaseColor.green,
+          //   size: ButtonSize.mediumShort,
+          // ),
         ],
       ),
     );
